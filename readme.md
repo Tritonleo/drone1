@@ -34,9 +34,13 @@ roslaunch fastlio_px4_waypoint single_waypoint.launch
 ## 机载树莓派目前的网络配置
 关于网络配置在/etc/netplan/01-installer-config.yaml中
 network:
+  
   version: 2
+  
   renderer: networkd
+  
   wifis:
+    
     wlan0:
       dhcp4: no
       addresses: [192.168.43.180/24]
