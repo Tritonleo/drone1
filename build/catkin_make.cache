@@ -1,0 +1,2 @@
+fastlio_px4_waypoint
+-DCATKIN_DEVEL_PREFIX=/home/demo/waypoint/devel -DCMAKE_INSTALL_PREFIX=/home/demo/waypoint/install -G Unix Makefiles
