@@ -28,7 +28,7 @@ roslaunch fastlio_px4_waypoint single_waypoint.launch
 然后程序会计算当前位置和目标位置并发送话题/mavros/setpoint_position/local给mavros，
 然后mavros会以MAVLink协议格式发给飞控，飞控执行。（具体mavlink是啥格式，飞控咋读取的这段信息并如何飞行，请飞控完成，我这只保证通信没有问题）。
 
-飞机到达航点（附近，定航点设置是0.2m），代码会给飞控发布降落指令（px4的降落和我无关，发送指令它自己就落了）
+飞机到达航点（附近，定航点误差设置是0.2m），代码会给飞控发布降落指令（px4的降落和我无关，发送指令它自己就落了）
 若未到达目标，则持续向 /mavros/setpoint_position/local 话题发布位置设定点。
 
 ## 机载树莓派目前的网络配置
@@ -48,7 +48,7 @@ network:
         "tritonP70":
           password: "20060819"
 ```
-//这一段为ssh配置，目的是让你在pc中开发树莓派，这个是我的手机热点以及密码，然后树莓派自启动会连到这个wifi上，然后你的pc再连这个wifi就能ssh了
+//这一段为ssh配置，目的是让你在pc中开发树莓派，这个是我的手机热点以及密码，然后树莓派自启动会连到这个wifi上，然后你的pc再连这个wifi就能ssh了，所以目前只有我能用机载，这个要么你写好之后我拷进去要么再想办法
 ```yaml
   ethernets:
     eth0:
