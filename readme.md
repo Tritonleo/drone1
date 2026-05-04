@@ -33,9 +33,8 @@ roslaunch fastlio_px4_waypoint single_waypoint.launch
 
 ## 机载树莓派目前的网络配置
 关于网络配置在/etc/netplan/01-installer-config.yaml中
-
+```yaml
 network:
-
   version: 2
   renderer: networkd
   wifis: 
@@ -50,9 +49,8 @@ network:
           password: "20060819"
 
 //这一段为ssh配置，目的是让你在pc中开发树莓派，这个是我的手机热点以及密码，然后树莓派自启动会连到这个wifi上，然后你的pc再连这个wifi就能ssh了
-
+```yaml
   ethernets:
-  
     eth0:
       dhcp4: no
       addresses: [192.168.1.50/24]
