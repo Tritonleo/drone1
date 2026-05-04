@@ -10,18 +10,18 @@
 4. 已完成FastLIO坐标系与PX4机体坐标系的外参标定
 
 
-启动流程：
+## 启动流程
 雷达启动（见mid360机载电脑配置.md）
 要求正确输出/Odometry
 
-启动mavros
+1. 启动mavros
 roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
 
-启动飞行逻辑节点
+2. 启动飞行逻辑节点
 source devel/setup.bash
 roslaunch fastlio_px4_waypoint single_waypoint.launch
 
-
+## 原理说明
 对于飞行代码只需要/Odometry的信息即可，需要保障这个话题的数据没有问题（我这里不保证这个话题是否正确，这个雷达负责），
 此时代码就会订阅这个话题信息来定位。
 
